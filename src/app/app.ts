@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {AchievementService} from './achievement.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,21 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('ekumen-tourism-tracker-prototype-client');
+
+  achievements : any[] = [];
+
+  constructor(private achievementService: AchievementService) {
+  }
+
+  ngOnInit(): void {
+    this.findAll();
+  }
+
+  private findAll() {
+    this.achievementService.search().subscribe(achievements => {
+      console.log(achievements);
+      this.achievements = achievements
+    });
+
+  }
 }

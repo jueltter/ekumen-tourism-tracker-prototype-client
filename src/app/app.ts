@@ -1,15 +1,18 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {AchievementService} from './achievement.service';
+import {FormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, FormsModule, MatFormFieldModule, MatInputModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('ekumen-tourism-tracker-prototype-client');
+  protected readonly title = signal('Stalin');
 
   achievements : any[] = [];
 
@@ -17,7 +20,7 @@ export class App {
   }
 
   ngOnInit(): void {
-    this.findAll();
+    //this.findAll();
   }
 
   private findAll() {

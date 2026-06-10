@@ -1,15 +1,15 @@
 import { inject, Injectable, InjectionToken } from '@angular/core';
-import { environment } from '../../../../environments/environment';
+import { EnvironmentService } from './environment.service';
 
-export const APP_CONFIG = new InjectionToken<typeof environment>('app.config');
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoggerWrapperService {
-  private config = inject(APP_CONFIG);
+  private environmentService = inject(EnvironmentService);
 
-  private showDebugLogs = this.config.showDebugLogs;
+  private showDebugLogs = this.environmentService.showDebugLogs;
 
   log(message: any, ...optionalParams: any[]) {
     if (this.showDebugLogs) {

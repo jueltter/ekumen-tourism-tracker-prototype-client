@@ -1,7 +1,8 @@
 import { inject, Injectable, InjectionToken } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {map, Observable} from 'rxjs';
-import { environment } from '../../../../environments/environment';
+import { environment } from '@environments/environment';
+import { EnvironmentService } from '@common-services/environment.service';
 
 export const APP_CONFIG = new InjectionToken<typeof environment>('app.config');
 
@@ -21,8 +22,10 @@ interface Achievement {
   providedIn: 'root',
 })
 export class AchievementService {
-  private config = inject(APP_CONFIG);
-  private url = this.config.backendUrl + '/api/achievements';
+    private environmentService = inject(EnvironmentService);
+
+
+  private url = this.environmentService.backendUrl + '/api/achievements';
 
   constructor(private http: HttpClient) { }
 

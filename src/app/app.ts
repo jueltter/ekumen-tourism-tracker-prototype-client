@@ -3,8 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { LoggerWrapperService } from './shared/services/common/logger-wrapper.service';
-import { AchievementService } from './shared/services/tourism-tracker/achievement.service';
+import { LoggerWrapperService } from '@common-services/logger-wrapper.service';
+import { AchievementService } from '@tourism-tracker-services/achievement.service';
 
 @Component({
   selector: 'app-root',

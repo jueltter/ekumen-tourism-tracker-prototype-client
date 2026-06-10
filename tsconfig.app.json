@@ -6,7 +6,9 @@
     "baseUrl": ".",
     "paths": {
       "@environments/*": ["src/environments/*"],
-      "@common-services/*": ["src/app/shared/services/common/*"]
+      "@common-services/*": ["src/app/shared/services/*"],
+      "@tourism-tracker-services/*": ["src/app/shared/tourism-tracker/services/*"],
+      "@tourism-tracker-interfaces/*": ["src/app/shared/tourism-tracker/interfaces/*"]
     },
     "outDir": "./out-tsc/app",
     "types": []

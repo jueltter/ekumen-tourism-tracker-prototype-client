@@ -1,6 +1,5 @@
-import { inject, Injectable, InjectionToken } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { EnvironmentService } from './environment.service';
-
 
 
 @Injectable({

@@ -9,12 +9,10 @@ import { Achievement } from '@tourism-tracker-interfaces/achievement.interface';
   providedIn: 'root',
 })
 export class AchievementService {
-    private environmentService = inject(EnvironmentService);
-
-
+  private environmentService = inject(EnvironmentService);
   private url = this.environmentService.backendUrl + '/api/achievements';
 
-  constructor(private http: HttpClient) { }
+  private http = inject(HttpClient);
 
   search(): Observable<Achievement[]> {
     let params = new HttpParams();
